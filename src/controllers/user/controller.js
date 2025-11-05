@@ -70,7 +70,6 @@ const loginUser = async (req, res) => {
     const userLogin = await User.findOne(
       { email: email.toLowerCase() }
     );
-    console.log(userLogin);
     
     if (!userLogin) {
       return res

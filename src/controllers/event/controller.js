@@ -67,7 +67,6 @@ const updateEventStatus = async (req,res) => {
         await updateEvent.save()
 
         return res.status(200).json("Event updated Successfully")
-        // console.log(req.params, req.query)
     } catch (error) {
         console.error('Create event error:', error);
         res.status(500).json({ error: 'Failed to update event' });
@@ -94,7 +93,6 @@ const deleteEvent = async (req,res ) => {
         userId: { $ne: req.userId },
         status: 'SWAPPABLE'
         }).populate('userId', 'userName');
-        console.log(slots, req.userId);
 
       res.status(200).json({message:"Event swappable slot available" , slots });
   } catch (error) {
@@ -120,10 +118,6 @@ const swapRequest = async (req,res) => {
     // Fetch both slots
     const mySlot = await Event.findById(mySlotId).session(session);
     const theirSlot = await Event.findById(theirSlotId).session(session);
-    console.log(mySlot, "+++++++->");
-    console.log(theirSlot, "----->")
-    console.log(req.userId);
-    console.log(mySlot.userId , req.userId);
     
 
     // Validation

@@ -6,7 +6,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "NODE_ENV=development nodemon -r dotenv/config index.js dotenv_config_path=.env.development"
+     "start": "cross-env NODE_ENV=production node -r dotenv/config index.js dotenv_config_path=.env.production",
+     "dev": "cross-env NODE_ENV=development nodemon -r dotenv/config index.js dotenv_config_path=.env.development"
+   
   },
   "keywords": [],
   "author": "",
@@ -23,7 +25,6 @@
     "socket.io": "^4.8.1"
   },
   "devDependencies": {
-    "cross-env": "^10.1.0",
     "nodemon": "^3.1.10"
   }
 }

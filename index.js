@@ -10,7 +10,6 @@ import { Server } from "socket.io";
 import config from "./src/configs/config.js";
 import { db } from "./src/configs/mongoose.js";
 import Notification from "./src/models/notification/schema.js";
-import mongoose from "mongoose";
 
 
 const app = express();

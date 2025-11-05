@@ -22,7 +22,6 @@ const Authenticate = async (req, res, next) => {
         if (!rootUser) {
       return res.status(401).json({ error: "Invalid token" });
     }
-    console.log(rootUser);
     
      req.userId = rootUser._id;
      req.userName = rootUser.userName;
